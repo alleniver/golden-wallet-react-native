@@ -5,7 +5,9 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
-    "postinstall": "rn-nodeify --install stream,buffer,events,assert,crypto,vm --hack"
+    "postinstall": "rn-nodeify --install stream,buffer,events,assert,crypto,vm --hack",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "assert": "^1.4.1",
@@ -71,7 +73,8 @@
     "stream-browserify": "^1.0.0",
     "typeforce": "^1.12.0",
     "vm-browserify": "0.0.4",
-    "wif": "^2.0.6"
+    "wif": "^2.0.6",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "babel-jest": "23.0.1",
@@ -113,5 +116,6 @@
     "_stream_passthrough": "readable-stream/passthrough",
     "stream": "stream-browserify",
     "vm": "vm-browserify"
-  }
+  },
+  "snyk": true
 }
